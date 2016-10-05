@@ -1,0 +1,16 @@
+{
+  "name": "isItAWord",
+  "version": "1.0.0",
+  "description": "An app to determine if a string of characters is a word. This app uses the MEAN Stack",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "mongoose": "^4.6.0",
+    "word-list-json": "^0.2.0"
+  },
+  "author": "Cory Capps"
+}
