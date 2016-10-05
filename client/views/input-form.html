@@ -1,0 +1,9 @@
+<form name="inputForm">
+    <input class="form-control" type="search" ng-model="search" placeholder="Search for 'Word' ...">
+    <ul>
+        <li ng-repeat="word in searchCtrl.words | filter:filterBySearch">
+            {{ word }}
+        </li>
+</ul>
+
+</form>
