@@ -75,12 +75,11 @@
         
         
         $scope.$watch('search', function(value) {
-            
             regex = new RegExp('\\b' + EscapeRegEx(value), 'i');
             console.log(regex);
         });
         
-        $scope.filterBySearch = function(word) {
+        vm.filterBySearch = function(word) {
             if(!$scope.search) {
                 return true;
             }
