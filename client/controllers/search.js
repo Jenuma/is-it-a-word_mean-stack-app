@@ -21,61 +21,8 @@
         var regex;
         
         $scope.search = "";
-       /* vm.words = [
-            "apple",
-            "ajax",
-            "alamo",
-            "banana",
-            "corn",
-            "carry-weight",
-            "dinosaur",
-            "delicious",
-            "eggbert",
-            "elephant",
-            "funk",
-            "fresh",
-            "funcky-fresh",
-            "gouda",
-            "gorgonzola",
-            "green",
-            "holla",
-            "hash",
-            "ignorant",
-            "ignious",
-            "japan",
-            "judo",
-            "kangaroo",
-            "karate",
-            "lmao",
-            "lecture",
-            "lord",
-            "mongoose",
-            "node",
-            "octagon",
-            "orange",
-            "polygonal",
-            "penis",
-            "quincy",
-            "queen",
-            "rush",
-            "rough",
-            "santuary",
-            "sectaurs",
-            "sizzle",
-            "turmoil",
-            "tuck",
-            "uranus",
-            "ukraine",
-            "venosaur",
-            "wednesday",
-            "weekend",
-            "xylophone",
-            "xxyzz",
-            "yandere",
-            "yo-dawg",
-            "zoobley-zoo"
-        ]; */
-        
+       
+
         // Requests the wordlist array from the server
         vm.getWords = function() {
             $http.get("/search")
@@ -102,7 +49,7 @@
             }
             return regex.test(word);
         };
-        
+
         // Get wordlist array from server
         vm.getWords();
     }
