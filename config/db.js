@@ -1,3 +1,4 @@
+// location of word-list database
 module.exports = {
-    url: 'mongodb://localhost/is-it-a-word/word-list'
+    url: 'mongodb://localhost/word-list'
 };

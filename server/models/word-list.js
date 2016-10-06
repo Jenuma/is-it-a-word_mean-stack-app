@@ -1,3 +1,4 @@
+// Mongoose Schema for WordList Model
 var mongoose = require("mongoose");
 
 var WordListSchema = new mongoose.Schema({
