@@ -18,7 +18,7 @@
         var regex;
         
         $scope.search = "";
-        vm.words = [
+       /* vm.words = [
             "apple",
             "ajax",
             "alamo",
@@ -71,7 +71,18 @@
             "yandere",
             "yo-dawg",
             "zoobley-zoo"
-        ];
+        ]; */
+        
+        vm.getWords = function() {
+            $http.get("/search")
+                .then(function(response) {
+                    vm.words = response.data;
+                },
+                function(response) {
+                    console.log(response.data);
+                });
+        };
+
         
         
         $scope.$watch('search', function(value) {
@@ -86,7 +97,7 @@
            
             return regex.test(word);
         };
-        
+        vm.getWords();
     }
 
 })();
