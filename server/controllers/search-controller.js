@@ -2,15 +2,18 @@
 
 var router = require("express").Router();
 
-router.get("/", getWords);
+router.post("/", getWords);
 
 function getWords(req, res) {
     var WordList = require("../models/word-list").WordList;
+    var regex = new RegExp("(\\b\\w*" + req.body.payload + "\\w*\\b)", "gi");
     
-    // use distinct to return wordlist array
-    WordList.distinct("wordlist").lean().exec()
+    WordList.find({}).lean().exec()
         .then(function(results){
-            res.status(200).json(results);
+            var prefilteredWords = results[0].words.join(" ");
+            var filteredWords = prefilteredWords.match(regex);
+        
+            res.status(200).json(filteredWords);
         })
         .catch(function(err) {
             console.log("Error: " + err);
