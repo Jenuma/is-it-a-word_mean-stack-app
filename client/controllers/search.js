@@ -17,7 +17,6 @@
     function SearchController($scope, $http) {
         var vm = this;
         
-        //var regex;
         $scope.search = "";
 
         // Watches for input in the search bar
@@ -39,16 +38,5 @@
                     console.log(response.data);
                 });
         };
-        
-        // Filters out array while searching
-//        vm.filterBySearch = function(word) {
-//            if(!$scope.search) {
-//                return false;
-//            }
-//            return regex.test(word);
-//        };
-
-        // Get wordlist array from server
-        //vm.getWords();
     }
 })();
