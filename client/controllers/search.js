@@ -15,38 +15,28 @@
     
     // Defines SearchController
     function SearchController($scope, $http) {
-        
         var vm = this;
-        var regex;
         
         $scope.search = "";
 
+        // Watches for input in the search bar
+        $scope.$watch("search", function(value) {
+            var req = {
+                payload: EscapeRegEx(value)
+            };
+            
+            vm.getWords(req);
+        });
+        
         // Requests the wordlist array from the server
-        vm.getWords = function() {
-            $http.get("/search")
+        vm.getWords = function(req) {
+            $http.post("/search", req)
                 .then(function(response) {
                     vm.words = response.data;
-                    console.log(response.data);
                 },
                 function(response) {
                     console.log(response.data);
                 });
         };
-        
-        // Watches for input in the search bar
-        $scope.$watch('search', function(value) {
-            regex = new RegExp('\\b' + EscapeRegEx(value), 'i');
-            console.log(regex);
-        });
-        
-        // Filters out array while searching
-        vm.filterBySearch = function(word) {
-            if(!$scope.search) {
-                return true;
-            }
-            return regex.test(word);
-        };
-
-        vm.getWords();
     }
 })();

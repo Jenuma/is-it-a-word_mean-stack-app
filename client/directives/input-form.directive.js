@@ -8,7 +8,9 @@
     function inputForm() {
         return {
             restrict: "E",
-            templateUrl: "input-form.html"
+            templateUrl: "input-form.html",
+            controller: "SearchController",
+            controllerAs: "searchCtrl"
         };
     }
 })();
