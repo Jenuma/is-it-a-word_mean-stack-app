@@ -1,6 +1,5 @@
 // Controller for wordlist search
-
-(function(){
+(function() {
     "use strict";
     
     angular
@@ -8,7 +7,7 @@
         .controller("SearchController", SearchController);
     
     // Escapes any special characters in string passed in by inputForm
-    function EscapeRegEx(string){
+    function EscapeRegEx(string) {
         if(string){
             return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
         }
@@ -21,7 +20,6 @@
         var regex;
         
         $scope.search = "";
-       
 
         // Requests the wordlist array from the server
         vm.getWords = function() {
@@ -34,7 +32,6 @@
                     console.log(response.data);
                 });
         };
-
         
         // Watches for input in the search bar
         $scope.$watch('search', function(value) {
@@ -50,8 +47,6 @@
             return regex.test(word);
         };
 
-        // Get wordlist array from server
         vm.getWords();
     }
-
 })();

@@ -1,4 +1,4 @@
-(function(){
+(function() {
     "use strict";
     
     angular
@@ -6,5 +6,4 @@
             "search",
             "input-form"
         ]);
-
 })();
