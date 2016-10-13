@@ -3,6 +3,7 @@
     
     angular
         .module("app", [
+            "regex-escape",
             "search",
             "input-form"
         ]);
